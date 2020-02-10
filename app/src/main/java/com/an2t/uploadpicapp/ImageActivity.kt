@@ -325,11 +325,14 @@ class ImageActivity : AppCompatActivity(), retrofit2.Callback<Response<ServiceRe
 
                 val propertyImage = RequestBody.create(contentType.toMediaTypeOrNull(), file)
                 val p = MultipartBody.Part.createFormData("upload_pic", file.name, propertyImage)
-                val p1 = MultipartBody.Part.createFormData("report_note", "testOne")
-                val p2 = MultipartBody.Part.createFormData("start_date", "2019-02-22")
-                val p3 = MultipartBody.Part.createFormData("lab_name", "testOne")
-                val p4 = MultipartBody.Part.createFormData("report_title", "testOne")
-                val p5 = MultipartBody.Part.createFormData("user_id", "15")
+
+
+                val p1 = RequestBody.create("text/plain".toMediaTypeOrNull(), "test-one")
+                val p2 = RequestBody.create("text/plain".toMediaTypeOrNull(), "2019-02-22")
+                val p3 = RequestBody.create("text/plain".toMediaTypeOrNull(), "testOne")
+                val p4 = RequestBody.create("text/plain".toMediaTypeOrNull(), "testOne")
+                val p5 = RequestBody.create("text/plain".toMediaTypeOrNull(), "15")
+
                 mPD.show()
 
 
@@ -383,12 +386,13 @@ class ImageActivity : AppCompatActivity(), retrofit2.Callback<Response<ServiceRe
                 }
 
                 val propertyImage = RequestBody.create(contentType.toMediaTypeOrNull(), file)
-                val p = MultipartBody.Part.createFormData("file", file.name, propertyImage)
-                val p1 = MultipartBody.Part.createFormData("report_note", "testOne")
-                val p2 = MultipartBody.Part.createFormData("start_date", "2019-02-22")
-                val p3 = MultipartBody.Part.createFormData("lab_name", "asd")
-                val p4 = MultipartBody.Part.createFormData("report_title", "testOne")
-                val p5 = MultipartBody.Part.createFormData("user_id", "15")
+                val p = MultipartBody.Part.createFormData("upload_pic", file.name, propertyImage)
+                val p1 = RequestBody.create("text/plain".toMediaTypeOrNull(), "test-one")
+                val p2 = RequestBody.create("text/plain".toMediaTypeOrNull(), "2019-02-22")
+                val p3 = RequestBody.create("text/plain".toMediaTypeOrNull(), "testOne")
+                val p4 = RequestBody.create("text/plain".toMediaTypeOrNull(), "testOne")
+                val p5 = RequestBody.create("text/plain".toMediaTypeOrNull(), "15")
+
                 mPD.show()
                 mSAPI.fetchHomeOfferAPI(
                     p , p5 , p4 , p3 , p2 , p1

@@ -2,6 +2,7 @@ package com.an2t.uploadpicapp
 
 import kotlinx.coroutines.Deferred
 import okhttp3.MultipartBody
+import okhttp3.RequestBody
 import retrofit2.Call
 import retrofit2.Response
 import retrofit2.http.*
@@ -15,11 +16,11 @@ interface ServiceAPI {
     @POST("addMedicalReport.php")
     fun fetchHomeOfferAPI(
         @Part image: MultipartBody.Part?,
-        @Part user_id: MultipartBody.Part?,
-        @Part report_title: MultipartBody.Part?,
-        @Part lab_name: MultipartBody.Part?,
-        @Part start_date: MultipartBody.Part?,
-        @Part report_note: MultipartBody.Part?
+        @Part("user_id") user_id: RequestBody,
+        @Part("report_title") report_title: RequestBody,
+        @Part("lab_name") lab_name: RequestBody,
+        @Part("start_date") start_date: RequestBody,
+        @Part("report_note") report_note: RequestBody
         /*, @Body RegParams mReg*/) : Call<Response<ServiceResponse>>
 
 
